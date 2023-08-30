@@ -28,31 +28,53 @@ div, span{
 .chart-xaxis{
   background: black;
   position: relative;
+  display: flex;
 }
 
 .chart-yaxis{
   width: 2px;
   height: 100%;
-  display: inline-block;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  /* display: inline-block; */
+}
+
+.chart-yaxis span{
+  margin-left: -12px;
+  margin-bottom: -5px;
+  position: relative;
+  top: -5px;
+}
+
+.chart-yaxis span::after{
+  content: "-";
+  position: absolute;
+  top: -5px;
+  left: 9px;
 }
 
 .chart-xaxis{
   width: 100%;
   height: 2px;
+  justify-content: space-evenly;
+}
+
+.chart-xaxis span{
+  padding: 5px 15px;
 }
 
 .chart-yaxis::before{
   content: "y-axis";
   position: absolute;
-  left: -2em;
+  left: -5em;
   top: 33%;
 }
 
 .chart-xaxis::before{
   content: "x-axis";
   position: absolute;
-  left: 33%;
-  bottom: -2em;
+  left: 45%;
+  bottom: -3em;
 }
 
 .chart-bars{
