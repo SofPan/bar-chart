@@ -22,7 +22,7 @@ const drawBarChart = (data, options, element) => {
     const barHeight = (bar / options.height) * 100;
     // get percentage of width for each bar
     const barWidth = 100 / options.width;
-    return `<div class="chart-bar" style="height:${barHeight}%; width:calc(${barWidth}% - 15px)"></div>`;
+    return `<div class="chart-bar mid" style="height:${barHeight}%; width:calc(${barWidth}% - 15px)"><span class="chart-bar--value">${bar}</span></div>`;
     // add join to remove rendering commas
   }).join("");
 
