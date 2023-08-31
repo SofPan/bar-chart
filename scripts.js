@@ -3,6 +3,11 @@ const CHART_ELEMENT = "#chart";
 const $title = $("#title");
 const $yaxis = $("#yaxis");
 const $xaxis = $("#xaxis");
+
+const resetForm = () => {
+  $("input").val("");
+}
+
 // chart width and height are dependent on the data being passed in
 const setOptions = (data) => {
   let width = data.length;
@@ -33,8 +38,21 @@ $("#submit").on("click", (e) => {
     $("#x-title").text($xaxis.val());
   }
 });
+$("#reset").on("click", (e) => {
+  e.preventDefault();
+  resetForm();
+})
 // draw the bar chart using provided data, setOptions, and element to render to
 const drawBarChart = (data, options, element) => {
+  // if any user input is invalid, alert and reset form;
+  for (const input of data){
+    if (isNaN(parseInt(input))){
+      alert("Please only use numbers");
+      resetForm();
+      return;
+    }
+  }
+
   // template to add correct number of bars and their values
   const barsTemplate = data
     .map((bar) => {
