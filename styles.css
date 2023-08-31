@@ -7,11 +7,24 @@ div, span{
   padding: 0;
   margin: 0;
 }
-
+main{
+  height: 75vh;
+  max-width: 1440px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+footer{
+  height: 20vh;
+}
 /* Chart */
+.chart-side{
+  width: 70%;
+}
 .chart-container{
-  width: 50vw;
-  height: 50vh;
+  width: 100%;
+  height: 100%;
   border: 1px solid lightgrey;
   margin: 0 auto;
 }
@@ -23,7 +36,31 @@ div, span{
   display: flex;
   flex-wrap: wrap;
 }
+.y-axis{
+  height: 100%;
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
+}
+.x-axis{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.chart-yaxis--title{
+  display: inline-block;
+  rotate: 270deg;
+  margin: auto auto;
+}
+.chart-xaxis--title{
+  display: inline-block;
+  max-width: max-content;
+  text-align: center;
+  margin: 0 auto;
+}
 .chart-yaxis,
 .chart-xaxis{
   background: black;
@@ -98,4 +135,23 @@ div, span{
   align-items: flex-end;
 }
 
+/* Options */
+.options-side{
+  width: 25%;
+}
 
+.options-side form{
+  display: flex;
+  flex-direction: column;
+}
+
+label,
+input{
+  display: block;
+}
+
+form button{
+  max-width: 66%;
+  margin-top: 24px;
+  background: transparent;
+}
