@@ -3,6 +3,7 @@ const $title = $("#title");
 const $yaxis = $("#yaxis");
 const $xaxis = $("#xaxis");
 
+// clear form fields
 const resetForm = () => {
   $("input").val("");
 }
@@ -45,7 +46,15 @@ $("#title-size").on("change", (e) => {
   // change font size to small, medium, or large depending on selection
   $("#chart-title").removeClass();
   $("#chart-title").addClass(e.target.value);
-})
+});
+
+// $("#bar-color").on("change", (e) => {
+//   setColor(e.target.value);
+// });
+
+const setColor = (col) => {
+  return `${col}`;
+}
 // draw the bar chart using provided data, setOptions, and element to render to
 const drawBarChart = (data, options, element) => {
   // if any user input is invalid, alert and reset form;
@@ -64,7 +73,7 @@ const drawBarChart = (data, options, element) => {
       const barHeight = (bar / options.height) * 100;
       // get percentage of width for each bar
       const barWidth = 100 / options.width;
-      return `<div class="chart-bar mid" style="height:${barHeight}%; width:calc(${barWidth}% - 15px)"><span class="chart-bar--value">${bar}</span></div>`;
+      return `<div class="chart-bar mid" style="height:${barHeight}%; width:calc(${barWidth}% - 15px); background:${setColor($("#bar-color").val())}"><span class="chart-bar--value">${bar}</span></div>`;
       // add join to remove rendering commas
     })
     .join("");

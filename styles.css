@@ -130,10 +130,10 @@ footer{
 }
 
 .chart-bar{
-  background: lavender;
+  /* background: lavender; */
   height: 100%;
   width: calc((100% / 6) - 15px);
-  border: 1px solid darkorchid;
+  /* border: 1px solid darkorchid; */
   align-self: flex-end;
   display: flex;
   justify-content: center;
