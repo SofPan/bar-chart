@@ -14,20 +14,30 @@
     <h1>Bar Chart API</h1>
   </head>
   <main>
-    <h2>Chart renders below</h2>
+    <h2 id="chart-title">Chart renders below</h2>
     <div id="chart" class="chart-container">
-      <!-- <div class="chart-container--inner">
-        <div class="chart-yaxis"></div>
-        <div class="chart-bars">
-          <div class="chart-bar">
-          </div>
-          <div class="chart-bar">
-          </div>
-          <div class="chart-bar">
-          </div>
+    </div>
+    <div class="options">
+      <form id="options" action="#">
+        <div>
+          <p>Enter numbers separated by a comma.</p>
+          <label for="data">Chart Data</label>
+          <input id="data" type="text">
         </div>
-        <div class="chart-xaxis"></div>
-      </div> -->
+        <div>
+          <p>Change chart title</p>
+          <label for="title">Title</label>
+          <input id="title" type="text">
+        </div>
+        <div>
+          <p>Change x or y axis titles</p>
+          <label for="xaxis">x-axis</label>
+          <input id="xaxis" type="text">
+          <label for="yaxis">y-axis</label>
+          <input id="yaxis" type="text">
+        </div>
+        <button id="submit" type="submit">Submit</button>
+      </form>
     </div>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>

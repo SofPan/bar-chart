@@ -63,18 +63,9 @@ div, span{
   padding: 5px 15px;
 }
 
-.chart-yaxis::before{
-  content: "y-axis";
-  position: absolute;
-  left: -5em;
-  top: 33%;
-}
-
-.chart-xaxis::before{
-  content: "x-axis";
-  position: absolute;
-  left: 45%;
-  bottom: -3em;
+.chart-yaxis--title,
+.chart-xaxis--title{
+  position: relative;
 }
 
 .chart-bars{
