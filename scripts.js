@@ -6,10 +6,12 @@ const $xaxis = $("#xaxis");
 // chart width and height are dependent on the data being passed in
 const setOptions = (data) => {
   let width = data.length;
-  let height = data.sort((a, b) => {
-    return b > a;
-  });
-  height = height[height.length - 1];
+  let height = 0;
+  for (let i = 0; i < data.length; i++){
+    if (parseInt(data[i]) > height){
+      height = data[i];
+    }
+  }
   return {
     width: width,
     height: height,
@@ -45,7 +47,7 @@ const drawBarChart = (data, options, element) => {
     })
     .join("");
   const yVals = [];
-  const markerSpacing = options.height / data.length;
+  const markerSpacing = Math.ceil(options.height / data.length);
   for (let i = 0; i <= options.height; i = i + markerSpacing) {
     yVals.push(i);
   }
