@@ -1,4 +1,3 @@
-const DUMMY_DATA = [1, 2, 3, 4, 5];
 const CHART_ELEMENT = "#chart";
 const $title = $("#title");
 const $yaxis = $("#yaxis");
@@ -41,6 +40,11 @@ $("#submit").on("click", (e) => {
 $("#reset").on("click", (e) => {
   e.preventDefault();
   resetForm();
+})
+$("#title-size").on("change", (e) => {
+  // change font size to small, medium, or large depending on selection
+  $("#chart-title").removeClass();
+  $("#chart-title").addClass(e.target.value);
 })
 // draw the bar chart using provided data, setOptions, and element to render to
 const drawBarChart = (data, options, element) => {
